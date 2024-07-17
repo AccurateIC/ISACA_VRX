@@ -1,0 +1,17 @@
+std_msgs/Header header
+std_msgs/Int64 target_id
+std_msgs/String valid
+std_msgs/String autoaquire
+std_msgs/String state
+std_msgs/Float64 range
+std_msgs/Float64 bearing
+std_msgs/Float64 true_bearing
+std_msgs/Float64 relative_speed
+std_msgs/Float64 relative_course
+std_msgs/Float64 true_speed
+std_msgs/Float64 true_course
+std_msgs/Float64 cpa
+std_msgs/Int64 tcp
+std_msgs/Float64 headinga_at_last_update
+std_msgs/String going_to_cp
+std_msgs/String true_data_valid
