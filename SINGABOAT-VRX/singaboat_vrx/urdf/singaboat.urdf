@@ -585,7 +585,7 @@
         </noise>
       </ray>
       <plugin filename="libgazebo_ros_velodyne_gpu_laser.so" name="lidar_plugin">
-        <topicName>wamv/sensors/lidars/lidar/points</topicName>
+        <topicName>usv/sensors/lidars_points</topicName>
         <frameName>wamv/lidar_link</frameName>
         <min_intensity>0</min_intensity>
       </plugin>
@@ -718,8 +718,8 @@
       <plugin filename="libgazebo_ros_camera.so" name="camera_plugin_camera">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>wamv/sensors/cameras/camera</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
+        <cameraName>usv/sensors/camera/ulyssesmini</cameraName>
+        <imageTopicName>rgb</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>wamv/camera_link_optical</frameName>
         <hackBaseline>0.07</hackBaseline>
@@ -772,13 +772,13 @@
       <bodyName>wamv/gps_link</bodyName>
       <!-- Manually prepend namespace to tf frame. -->
       <frameId>wamv/gps_link</frameId>
-      <topicName>wamv/sensors/gps/gps/fix</topicName>
+      <topicName>usv/sensors/gps/gps/fix</topicName>
       <!-- Note that the hector_gazebo_ros_gps plugin uses NWU coordinates
              for reporting velocities.  This may cause problems if localization
              requires velocity in ENU.
              See Issue #64 in VRX project for details
              https://bitbucket.org/osrf/vrx/issues/64 -->
-      <velocityTopicName>wamv/sensors/gps/gps/fix_velocity</velocityTopicName>
+      <velocityTopicName>usv/sensors/gps/gps/fix_velocity</velocityTopicName>
       <!-- Tell the plugin to use the spherical_coordiantes parameters
 	     from SDF.
 	     https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/melodic-devel/hector_gazebo_plugins/src/gazebo_ros_gps.cpp#L101
@@ -819,7 +819,7 @@
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_plugin_imu">
       <updateRate>15</updateRate>
       <bodyName>wamv/imu_link</bodyName>
-      <topicName>wamv/sensors/imu/imu/data</topicName>
+      <topicName>usv/sensors/emru_data</topicName>
       <serviceName>wamv/sensors/imu_service</serviceName>
       <!-- Manually prepend namespace to tf frame. -->
       <frameId>wamv/imu_link</frameId>
@@ -930,8 +930,8 @@
   <gazebo>
     <plugin filename="libusv_gazebo_acoustic_pinger_plugin.so" name="pinger_plugin">
       <frameId>wamv/pinger</frameId>
-      <topicName>wamv/sensors/pingers/pinger/range_bearing</topicName>
-      <setPositionTopicName>wamv/sensors/pingers/pinger/set_pinger_position</setPositionTopicName>
+      <topicName>usv/sensors/pingers/pinger/range_bearing</topicName>
+      <setPositionTopicName>usv/sensors/pingers/pinger/set_pinger_position</setPositionTopicName>
       <rangeNoise>
         <noise>
           <type>gaussian</type>

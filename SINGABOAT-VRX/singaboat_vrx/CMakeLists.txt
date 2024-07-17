@@ -34,16 +34,11 @@ catkin_python_setup()
 
 # Dynamic reconfigure options
 generate_dynamic_reconfigure_options(
-  cfg/teleoperation_config.cfg
   cfg/inverse_kinematics_config.cfg
   cfg/task_manager_config.cfg
   cfg/mission_manager_config.cfg
-  cfg/station_keeping_config.cfg
   cfg/wayfinding_config.cfg
   cfg/scene_perception_config.cfg
-  cfg/semantic_navigation_config.cfg
-  cfg/gymkhana_challenge_config.cfg
-  cfg/scan_dock_deliver_config.cfg
 )
 
 #################################
@@ -90,16 +85,11 @@ catkin_package(CATKIN_DEPENDS
 
 # Install all the script files
 catkin_install_python(PROGRAMS
-  src/singaboat_teleoperation.py
   src/singaboat_inverse_kinematics.py
   src/singaboat_mission_manager.py
   src/singaboat_task_manager.py
-  src/singaboat_station_keeping.py
   src/singaboat_wayfinding.py
   src/singaboat_scene_perception.py
-  src/singaboat_semantic_navigation.py
-  src/singaboat_gymkhana_challenge.py
-  src/singaboat_scan_dock_deliver.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 # Install all the script config files

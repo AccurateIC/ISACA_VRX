@@ -169,5 +169,5 @@ class LidarToRadarConverter:
 if __name__ == "__main__":
     converter = LidarToRadarConverter(task_name="perception")
     rospy.init_node('lidar_to_radar_converter', anonymous=True)
-    rospy.Subscriber('/wamv/sensors/lidars/lidar/points', PointCloud2, converter.lidar_callback)
+    rospy.Subscriber('/usv/sensors/lidars_points', PointCloud2, converter.lidar_callback)
     rospy.spin()
